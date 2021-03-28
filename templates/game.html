@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Boggle!
+{% endblock %}
+
+{% block content %}
+<section id="boggle_space">
+ <div id="gameboard">
+        {% for y in range(5) %}
+            
+                {% for x in range(5) %}
+                    <span class="gamespace row-{{x}} col-{{y}}" id="{{x}}-{{y}}">{{session['game_board'][y][x]}}</span>
+                {% endfor %}
+            
+        {% endfor %}
+ </div>
+<br>
+ <form method="POST" class="add-entry">
+     <label for="entry">Enter next word here:</label><br>
+     <input type="text" name="entry" id="entry" autofocus><br>
+     <input type="submit" value="Submit Entry">
+ </form>
+
+</section>
+<p>Your current score is: <span id="score">0</span></p>
+<p id="timerLabel">You have <span id="timer"></span>s left.</p>
+<br><br> <a href="/home">Back to the homepage.</a>
+{% endblock %}
+{% block scripts %}
+<script>
+    let game = new BoggleBoard('boggle_space');
+
+    
+    $( document ).ready(game.handleStartGame);
+    
+
+</script>
+{% endblock %}

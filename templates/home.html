@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Welcome to the game!
+{% endblock %}
+
+{% block content %}
+ <h1>Welcome to Boggle!</h1>
+ <h2>Let's all be the best bogglers we can, eh?</h2>
+{% if session['highscore'] %}
+ <span id="highScoreLabel">Your current high score is: <b id="highScore">{{session['highscore']}}</b></span>
+ <br>
+{% else %}
+ <br><br>
+{% endif %}
+{% if session['playCount'] %}
+ <span class="playCountLabel">You have played <b class="playCount">{{session['playCount']}}</b> times.</span>
+{% else %}
+ <br>
+{% endif %}
+<br><br>
+ <a href="/game" method="get">Let's start a game!</a>
+{% endblock %}
+
+{% block scripts%}
+
+{% endblock %}
