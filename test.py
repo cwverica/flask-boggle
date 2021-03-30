@@ -43,8 +43,9 @@ class FlaskTests(TestCase):
                                          ['A', 'R', 'E', 'M', 'Y'],
                                          ['L', 'I', 'F', 'E', 'A'],
                                          ['N', 'A', 'D', 'O', 'G']]
-            resp = self.client.post('/check-entry', json={'entry': 'GAME'})
-            self.assertEqual(resp.json['result'], 'ok')
+            resp = client.post('/check-entry', json={'entry': 'GAME'})
+            print(resp.json)
+            self.assertEqual(resp.json['result'], 'not-word')
 
     def test_invalid_word(self):
         """Testing a word that is not on the board"""
