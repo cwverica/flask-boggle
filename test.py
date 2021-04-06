@@ -43,7 +43,7 @@ class FlaskTests(TestCase):
                                          ['A', 'R', 'E', 'M', 'Y'],
                                          ['L', 'I', 'F', 'E', 'A'],
                                          ['N', 'A', 'D', 'O', 'G']]
-            resp = self.client.post('/check-entry', json={'entry': 'GAME'})
+            resp = client.post('/check-entry', json={'entry': 'game'})
             self.assertEqual(resp.json['result'], 'ok')
 
     def test_invalid_word(self):
