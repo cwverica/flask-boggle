@@ -1,3 +1,27 @@
+
+# Running tests
+
+Prep the environment:
+
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Run tests (inside `test.py`):
+
+```
+python -m unittest test.FlaskTests
+```
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ Thanks for writing this readme. I'm just messing around with markdown. Enjoy this
+ jocular writing of ridiculousness... or not.
+ 
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ### Hello, Welcome to the readme file.
 
 First and foremost, read the requirements.txt to set up your virtual environment.  
